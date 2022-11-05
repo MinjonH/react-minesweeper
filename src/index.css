@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-cover bg-center
+    }
+
+    li{
+        @apply list-item list-decimal ml-3 pl-2
+    }
+}
+
+@layer components{
+    .App{
+        @apply text-center flex flex-col justify-center items-center self-center
+    }
+
+    #gameOver{
+        @apply opacity-100 z-10 h-[55%] max-w-full bg-repeat-x relative pt-[20%]
+    }
+
+    .tryAgain{
+        @apply cursor-pointer ml-0 mr-0 mt-[50px] mb-[50px] rounded-lg bg-red-600 text-white p-3 font-bold
+    }
+}
+
