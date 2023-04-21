@@ -14,6 +14,7 @@ export default function Board() {
 	const [newTime, setTime] = useState(0);
 
 	useEffect(() => {
+		// create the board
 		const generateBoard = () => {
 			const getBoard = createBoard(10, 15, 20, setMineLocations);
 			setNonMinesCount(100 - 20);
@@ -26,6 +27,7 @@ export default function Board() {
 		generateBoard();
 	}, [restart, setRestart]);
 
+	// clear the board to restart the game
 	const updateBoard = (x, y, e) => {
 		let newBoardValues = JSON.parse(JSON.stringify(board));
 		let newNonMinesCount = nonMinesCount;
@@ -34,18 +36,14 @@ export default function Board() {
 				if (
 					!newBoardValues[mineLocations[i][0]][mineLocations[i][1]].revealed
 				) {
-					// setInterval(() => {
 					newBoardValues[mineLocations[i][0]][
 						mineLocations[i][1]
 					].revealed = true;
 					setBoard(newBoardValues);
-
-					// }, 500);
 				}
 			}
 			setGameOver(true);
 		} else {
-			// newBoardValues[x][y].revealed = true;
 			newBoardValues = revealed(newBoardValues, x, y, newNonMinesCount);
 			if (!newBoardValues) {
 				return;
@@ -55,6 +53,7 @@ export default function Board() {
 		}
 	};
 
+	// create the flag option
 	const flagCell = (x, y) => {
 		let newBoardValues = JSON.parse(JSON.stringify(board));
 		newBoardValues[x][y].flagged = !newBoardValues[x][y].flagged;
