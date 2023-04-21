@@ -1,5 +1,5 @@
 import React from 'react';
-import { mineColor } from '../util/mineColour';
+import { mineColor } from '../utilities/mineColour';
 
 export default function Cell({ data, updateBoard, flagCell }) {
 	const style = {

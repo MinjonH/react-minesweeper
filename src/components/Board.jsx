@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import createBoard from '../util/createboard';
+import createBoard from '../utilities/createboard';
 import Cell from './Cell';
-import { revealed } from '../util/reveal';
+import { revealed } from '../utilities/reveal';
 import TopBar from './TopBar';
 import Modal from './Modal';
 
